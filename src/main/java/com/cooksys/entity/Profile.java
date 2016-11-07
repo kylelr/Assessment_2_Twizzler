@@ -10,6 +10,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "profile")
 public class Profile {
+	
+	public Profile(){
+		
+	}
 	//may need to remove join
 	@Id
 	@GeneratedValue
@@ -28,7 +32,7 @@ public class Profile {
     private String phone;
     
     private Profile(Long id, String first_name, String last_name, String email, String phone) {
-    	this.id = id;
+    	this.setId(id);
     	this.first_name = first_name;
     	this.last_name = last_name;
     	this.email = email;
@@ -66,6 +70,14 @@ public class Profile {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }

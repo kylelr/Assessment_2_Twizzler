@@ -43,6 +43,14 @@ private TwizzleRepo twizzleRepo;
 		return twizzleRepo.getOrderedNondeletedTwizzles();
 	}
 	
+	public List<Twizzle> getTwizzlesByUser(String username){
+		return twizzleRepo.getTwizzlesByUser(username);
+	}
+	
+	public List<Twizzle> getMentionsByUser(String username){
+		return twizzleRepo.getMentionByUserName(username);
+	}
+	
 	@Transactional
 	public void deleteTwizzlerById(Long id){
 		twizzleRepo.deleteTwizzlerById(id);

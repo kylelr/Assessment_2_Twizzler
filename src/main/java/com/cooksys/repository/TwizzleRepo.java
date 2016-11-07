@@ -28,6 +28,14 @@ public interface TwizzleRepo extends JpaRepository<Twizzle, Long> {
 	@Query(value="insert into twizzler.mention (user_name,twizzle_id) values (?, ?)", nativeQuery = true)
 	public void setTwizzleMention(String user_name, Long twizzle_id);
 	
+	
+			
+	@Query(value="select * from twizzler.twizzle where user_id in (select id from twizzler.user where username=?)", nativeQuery = true)
+	public List<Twizzle> getTwizzlesByUser(String username);
+	
+	@Query(value="select * from twizzler.twizzle where id in (select twizzle_id from twizzler.mention where user_name=?)", nativeQuery = true)
+	public List<Twizzle> getMentionByUserName(String username);
+	
 	@Query(value="select user_name from twizzler.mention where twizzle_id=?", nativeQuery = true)
 	public List<String> getMentionByTwizzleId(Long twizzle_id);
 	

@@ -74,13 +74,6 @@ public class User {
 	        this.id = id;
 	    }
 
-	    public String getUser() {
-	        return username;
-	    }
-
-	    public void setUser(String user) {
-	        this.username = username;
-	    }
 	   
 	    
 	    public String getProfile() {
@@ -121,6 +114,30 @@ public class User {
 
 		public void setDeleted(boolean deleted) {
 			this.deleted = deleted;
+		}
+
+		public String getUsername() {
+			return username;
+		}
+
+		public void setUsername(String username) {
+			this.username = username;
+		}
+
+		public String getProfile_id() {
+			return profile_id;
+		}
+
+		public void setProfile_id(String profile_id) {
+			this.profile_id = profile_id;
+		}
+
+		public List<Twizzle> getTwizzle() {
+			return twizzle;
+		}
+
+		public void setTwizzle(List<Twizzle> twizzle) {
+			this.twizzle = twizzle;
 		}
 		
 	

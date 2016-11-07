@@ -29,7 +29,7 @@ public class Credentials {
 	   public Credentials(Long id, String username, String password) {
 		   this.setId(id);
 		   this.username = username;
-		   this.password = password;
+		   this.setPassword(password);
 	   }
 	   
 		public void setPassword(String password) {
@@ -50,6 +50,10 @@ public class Credentials {
 
 		public void setId(long id) {
 			this.id = id;
+		}
+
+		public String getPassword() {
+			return password;
 		}
 }
 

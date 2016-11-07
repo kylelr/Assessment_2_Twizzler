@@ -6,6 +6,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 
+import com.cooksys.entity.Profile;
 import com.cooksys.entity.User;
 import com.cooksys.repository.UserRepo;
 
@@ -14,9 +15,6 @@ public class UserService {
 	
 	private UserRepo userRepo;
 	
-	//public UserService(){
-		
-	//}
 	public UserService(UserRepo userRepo) {
 		this.userRepo = userRepo;
 		
@@ -30,11 +28,16 @@ public class UserService {
 		return userRepo.findAll();
 	}
 
-	public void add(User user) {
-		userRepo.saveAndFlush(user);
+	public User add(User user) {
+		return userRepo.saveAndFlush(user);
 	}
 	
 	public User getUserbyUsername(String username){
+		return userRepo.getUserByUsername(username);
+	}
+	
+	public User deleteUser(String username){
+		userRepo.deleteUserByName(username);
 		return userRepo.getUserByUsername(username);
 	}
 	
